@@ -1,0 +1,514 @@
+/* NOTE: 
+    Page idea:
+        the idea behind this page is to create a home page as a place for hack you future to demonstrate its talented graduates to employees seekers .Through out the page they will have the chance to see why they should consider HYF as a leading code school that supplies its students with the most developed coding technology. Furthermore, employees seekers will be able to find the profiles of the Hack Your Future graduates who are currently open to new job opportunities and can contact them as well.
+        I also have the idea of Hack Your Future Curriculum which I am planning to start working on it soon.
+    
+    Technology used:
+        I have used pure HTML5 , CSS3 and javascript with no frameworks or libraries. The page was designed as logical as possible utilizing the modern HTML5 tags . I attempted hardly to imitate the modern spirit of creating Web User Interfaces. I defined globle CSS classes in order to use them in different part of the page multiple times avoiding any redundancy as much as possible . You can find these classes in the beginning of this style sheet (css file) . 
+        I, also, paid special attention to make the page as interactive and responsive as possible . To achieve this goal I used Flex-blox several times through out the page and also used media query along side with a bit of javascript to help the page gain more responsiveness and interaction . 
+
+        This work took around six days of continuous hard work with around 5 hours per day spending most of this time trying to improve the page even better particularly when it comes to the aesthetic effects .Nevertheless, there might be some parts which are poor or inappropriate aesthetic effects due to my lack of experience .
+
+        Lastly, I hope this humble piece of work obtain your admiration .Moreover, I would like to thank you for this great opportunity which will certianly help me gain more experience in the long run . 
+
+    */
+
+
+    @import url('https://fonts.googleapis.com/css?family=Lobster|Open+Sans:300,400,700,700i&display=swap');
+
+
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;   
+    }
+    h1{
+        font-size: 37px;
+        font-weight: 700;
+        font-style: italic;
+        font-family: 'Open Sans', sans-serif;
+        word-spacing: 0.3em;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        background-color: transparent;
+        margin: 20px;
+    }
+    h2{
+        font-family: 'open Sans', sans-serif;
+        font-weight: 700;
+        font-style: italic;
+    }
+    p{
+        background-color: transparent;
+        margin: 20px;
+        color: rgb(255, 255, 255);
+        font-size: 22px;
+        font-weight: 300;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: normal; 
+        line-height: 1.2;
+        word-spacing: 2px;
+    }
+    .MyFlex{
+        margin: 30px 0px 40px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    button, .button{
+        background-color: #37a000;
+        padding: 11px 28px;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        margin: 8px;
+        color: #fff;
+        width: auto;
+        height: auto;
+        line-height: 15px;
+        font-size: 18px;
+        font-family: Gotham SSm,Arial, Helvetica, sans-serif;
+        
+    }
+    button:hover, .button:hover{
+        background-color: rgba(19, 155, 1, 0.8);
+    }
+    .clr{
+        clear: both;
+    }
+    li , a, i{
+        background-color: transparent;
+    }
+    .divide-line{
+        border-bottom: 1px rgb(206, 206, 206) solid;
+        margin: 0% 3%;
+    }
+    span{
+        color: #51bd17;
+        font-family: 'Lobster', cursive;
+        background-color: transparent;
+    }
+    .fa-facebook{
+        background: #3b5998;
+    }
+    .fa-facebook:hover{
+        background: rgb(75, 75, 243);
+    }
+    .fa-twitter{
+        background: #4099FF;
+    }
+    .fa-twitter:hover{
+        background: #88f6f6;
+    }
+    .fa-instagram{
+        background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+    }
+    .fa-instagram:hover{
+        background: #3f729b;
+    }
+    .fa-youtube{
+        background: #c4302b;
+    }
+    .fa-youtube:hover{
+        background: rgb(243, 118, 118);
+    }
+    
+    
+    
+    
+    /* styling the header ***************************************************************************************** */
+    header{
+        background-color: black;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index:1;
+        padding: 0% 6%;
+    }
+    nav{
+        display: flex;
+        align-items: center;
+        min-height: 8vh;
+        justify-content: space-around;
+    }
+    .logo img{
+        height:80px;
+        width: 90px;
+    }
+    .nav-lists{
+        display: flex;
+        width: 45%;
+        justify-content: space-around;
+    }
+    .nav-lists a{
+        color: #eee;
+        text-decoration: none;
+        font-size: 20px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+    }
+    .nav-lists li{
+        list-style: none;
+    }
+    nav input[type=text]{
+        border: 2px solid #cccccc;
+        border-radius: 5px;
+        padding: 12px 20px;
+        background-color: white;
+        font-size: 16px;
+        width: 150px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+        color: black;
+    }
+    nav form button{
+        background-color: black;
+    }
+    nav form{
+        width: auto;
+        height: auto;
+    }
+    nav form input[type=text]:focus{
+        width: 70%;
+    }
+    nav form button{
+       margin: 0;
+    }
+    .burger div{
+        height: 5px;
+        width: 20px;
+        background-color: black;
+        margin: 5px;
+    }
+    .burger{
+        position: fixed;
+        right: 7%;
+        background-color: white;
+        border-radius: 3px;
+        display: none;
+        cursor: pointer;
+    }
+    .nav-lists a:hover{
+        color:#37a000;
+    }
+    .nav-active{
+        transform: translateX(0%) !important;
+    }
+    
+    
+    
+    /* the background show image with a text and a button upon the bg img *********************************************/
+    
+    .bg-img{
+        position: relative;
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+    .bg-img >img{
+        border-bottom: 3px snow solid;
+    }
+    .text-block{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 400px;
+        height: auto;
+        margin-left: -200px;
+        margin-top: -40px;
+        background-color: transparent;
+    }
+    
+    
+    /*the Why section *******************************************************************************************/
+    .why-text-block{
+        text-align: left;
+        padding: 0px 20px;
+        width: 600px;
+        height: auto;
+    }
+    .why-text-block ul{
+        padding: 0px 30px;
+        font-size: 20px;
+        font-weight: 400;
+        font-style: italic;
+        font-family: 'Open Sans', sans-serif;;
+    }
+    .row-box{
+        /*border: red 2px solid;*/
+        width: 350px;
+        height: auto;
+        margin-top: 50px;
+        text-align: center;
+        color: white;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .row-box img{
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+    
+    /* styling the partners part ****************************************************************/
+    #partners img{
+        width: 170px;
+        height: 80;
+        margin: 20px 30px;
+    }
+    .video-wraper{
+        margin: 5% 10%;
+    }
+    .float-right {
+        float: right;
+        width: 65%;
+        margin-left: 10%;
+        margin-bottom: 20px;
+    }
+    .video-wraper > span{
+        font-size: 27px;
+        line-height: auto;
+        padding: 10px;
+        margin-right: 200px;
+        width: 50%;
+    }
+    
+    /* styling graduates part *************************************************************************/
+    #Graduates-section{
+        margin-top: 100px;
+        margin-bottom: 50px;
+        margin-left: 60px;
+        margin-right: 60px;
+        text-align: center;
+    }
+    .Graduates-container{
+        position: relative;
+        width: 250px;
+        height: 300px;
+        margin: 20px;
+    }
+    .Graduates-card{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: all 0.5s ease;
+    }
+    .Graduates-card:hover{
+        transform: rotateY(180deg);
+    }
+    .thefront{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        background: rgb(255, 255, 255);
+        color: #333333;
+        text-align: center;
+        border-radius: 20px;   
+    }
+    .thefront > img{
+        border-radius: 20px;
+    }
+    .theback{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        color: #333333;
+        transform: rotateY(180deg);
+        text-align: center;
+        border-radius: 20px;
+        padding: 40% 10%;
+        background: rgb(255, 255, 255);
+    }
+    .theback > *{
+        background: rgb(255, 255, 255);
+        color: #2a2929;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .theback ul li{
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin: 5px 5px;
+        border-radius: 100%;   
+    }
+    .theback ul li:hover{
+        background: rgb(11, 178, 255);
+    }
+    .theback ul li a{
+        color: #272727;
+        font-size: 20px;
+    }
+    .theback ul li a i{
+        line-height: 30px;
+        border-radius: 100%;
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    /* the qestion and answer part ---------------------------------------------------------------------------------*/
+    #F-Q{
+        text-align: center;
+        margin: 30px;
+    }
+    .collapse{
+        background-color: #eee;
+        color: rgb(10, 10, 10);
+        cursor: pointer;
+        padding: 18px;
+        width: 70%;
+        border: none;
+        text-align: center;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+    }
+      
+    .active, .collapse:hover {
+    background: #37a000;
+    color: white;
+    }
+    
+    .collapse:after {
+    content: '\002B';
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    }
+    
+    .active:after {
+    content: "\2212";
+    }
+    
+    .panel {
+    margin: 0px 15%;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    }
+    .panel > p{
+        margin: 0;
+        padding: 10px 20px;
+        color: white;
+        background: #37a000;
+        text-align: center;
+        font-size: 20px;
+        height: auto;
+    }
+    
+    .my-form h2{
+    margin: 30px 0px;
+    }
+    
+    textarea, .form-item input[type="text"]{
+        width: 50%;
+        padding: 10px;
+        background-color: white;
+        color: black;
+    }
+    .my-form, .form-item{
+        padding-bottom: 20px;
+    }
+    
+    /* the footer of the page...........................................................................................*/
+    footer{
+        width: 100%;
+        height: auto;
+        margin: auto;
+        padding: 20px 0px;
+        background-color: white;
+    }
+    
+    .footer-social-icons{
+        width: 100%;
+        height: auto;
+        
+        margin-top: 20px;
+    }
+    .footer-social-icons ul{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-color: white;
+    
+    }
+    .footer-social-icons ul li{
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        margin: 10px 10px;
+        border-radius: 100%;
+    }
+    .footer-social-icons ul li a{
+        color: #020202;
+        font-size: 25px;
+    }
+    .footer-social-icons ul li a i{
+        line-height: 50px;
+        border-radius: 100%;
+        width: 100%;
+        height: 100%;
+    }
+    .footer-text{
+        width: 100%;
+        margin: auto;
+        height: auto;
+        padding: 2px;
+        background-color: white;
+    
+    }
+    .footer-text p{
+        font-size: 20px;
+        color: black;
+        text-align: center;
+    }
+    .footer-text span{
+        background-color: transparent;
+    }
+    .footer-text p a{
+        color: black;
+        text-decoration: none;
+    }
+    
+    
+    
+    /* Using media query to make the website responsive */
+    
+    @media(max-width:1100px){
+        .nav-lists{
+            width: 60%;
+        }
+    }
+    @media(max-width:760px){ 
+        .nav-lists{
+            position: fixed;
+            background-color: black;
+            top: 11vh;
+            right: 0;
+            height: 100%;
+            width: 60%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 5px;
+            transform: translateX(100%);
+            transition: transform 0.4s ease-in;
+            padding-bottom: 50px;
+        }
+        .burger{
+            display: block;
+        }
+        .float-right{
+            width: 100%;
+        }
+       .video-wraper > span{
+            padding: 10px;
+        }
+    }
