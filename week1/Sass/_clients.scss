@@ -1,0 +1,75 @@
+@import "./variables";
+@import "./mixin";
+
+#clients{
+    width: 90%;
+    margin: 40px;
+    padding: 20px;
+    h1{
+        @include h1;
+        margin-bottom: 20px;
+        @media(max-width:480px){
+            margin-bottom: 45px;
+        }   
+    }
+    .slide{
+        display: none;
+        animation-name: fade;
+        animation-duration: 1s;
+        margin: 40px 20%;
+        position: relative;
+        border-top: 5px $color-0 solid;
+        box-shadow: 10px 10px 10px rgb(114, 100, 100),-10px 0px 10px  rgb(114, 100, 100);
+        img{
+            @include roundPhoto(100px, 100px);
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            margin-left: -50px;
+        }
+        @media(max-width:560px){
+            margin: 45px 10%;
+        }
+        .slide-text{
+            margin: 50px 0px 20px 0px;
+            padding: 20px;
+            p{
+                text-align: center;
+                padding: 20px;
+                font-weight: 700;
+                font-size: large;
+                font-style: italic;
+                font-family: $Font-Family;
+            }
+            q{
+                font-size: large;
+                font-family: $Font-Family;
+            }
+        }
+        @keyframes fade{    
+            from{
+                opacity: 0.4
+            }
+            to{
+                opacity: 1
+            }
+        }
+    }
+    .dots{
+        text-align: center;
+        .dot{
+            width: 20px;
+            height:20px;
+            display: inline-block;
+            display: block-inline;
+            background-color: $primaryWhite;
+            border-radius: 50%;
+            margin: 0px 0px;
+            transition: background-color 0,5s ease-in-out;
+            cursor: pointer;
+        }
+        .active, .dot:hover{
+            background-color: $color-0;
+        }
+    }    
+}

@@ -1,0 +1,99 @@
+@import "./variables";
+@import "./mixin";
+
+.navbar-slider-icon{
+    background-color: $darkBlack;
+    width: 100%;
+    height: 50px;
+    padding: 5px 5px 10px 5px;
+
+    span{
+        background-color: $primaryBlack;
+        border-radius: 5px;
+        height: 100%;
+        width: 100%;
+
+        margin: 20px 20px 20px 10%;
+        font-size: 35px;
+        cursor: pointer;
+        color: $White;
+        &:hover{
+            font-size: 50px;
+            border: 2px solid $darkBlack;
+            background-color: $darkBlack;
+        }
+    }
+}
+.navbar-slider{
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    display: none;
+    animation: showNav 0.2s ease-in-out both;
+    animation-duration: 1s;
+    @keyframes showNav{
+        from{ opacity: o;}
+        to  { opacity : 1;}
+    }
+    .hide-icon{
+        font-size: 40px;
+        position: absolute;
+        z-index: 2;
+        right: 15px;
+        top: 15px;
+        color: $White;
+        border-radius: 4px;
+        background-color: $darkBlack;
+        cursor: pointer;
+        &:hover{
+            font-size: 50px;
+        }
+    }
+    div{
+        text-align: center;
+        background-color: $primaryBlack;
+        color: $White;
+        padding: 20px;
+        padding-top: 100px;
+        font-size: larger;
+    }
+    img{
+        @include roundPhoto(100px,100px);
+    }
+    ul{
+        @include flex(column, 100vh, auto, $White);
+        list-style: none;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        padding-left: 0px;
+        height: 70vh;
+        text-align: center;
+        li{
+            padding-top: 8px;
+            margin: 5px 0px 5px 0px;
+            a{
+                font-size: larger;
+                color: $darkBlack;
+                text-decoration: none;
+                &:hover{
+                    color: $color-0;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:620px){
+    .navbar-slider{
+        width: 60%;
+        div{
+            font-size: large;
+        }
+        ul{
+            padding-left: 50px;
+        }
+    }
+}
+

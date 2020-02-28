@@ -1,0 +1,180 @@
+@import "./variables";
+@import "./mixin";
+
+#work-experience{
+    h1{
+        @include h1;
+    }
+    width: 80%;
+    margin: 20px auto;
+    position: relative;
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 94px;
+        margin: 0;
+        width: 3px;
+        height: 90%;
+        background: $color-0;
+    }
+    article{
+        width: 100%;
+        position: relative;
+        margin: 0 0 20px 0;
+        &::after{
+            content: " ";
+            display: block;
+            clear: both;
+        }
+        .container-work-experience{
+            width: 40%;
+            float: left;
+            margin: 5px auto 0 auto;
+            border-radius: 6px;
+            .date{
+                display: block;
+                width: 85px;
+                height: 75px;
+                padding: 5px 0;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin: 0 0 0 -40px;
+                border-radius: 100%;
+                font-size: 12px;
+                font-weight: 900;
+                text-transform: uppercase;
+                background: $darkBlack;
+                color: $White;
+                box-shadow: 3px 3px 3px $color-0;
+                transition: 0.4s ease-in;
+                cursor: pointer;
+                &:hover{
+                    width: 90px;
+                    height: 80px;
+                    background-color: $color-0;
+                    
+                }
+
+                span{
+                    display: block;
+                    text-align: center;
+                }
+                .day, .year{
+                    font-size: 15px;
+                }
+                .month{
+                    font-size: 20px;
+                }
+            }
+            
+            h2{
+                position: relative;
+                padding: 15px;
+                color: $White;
+                font-size: 30px;
+                font-family: $Font-Family;
+                text-transform: uppercase;
+                border-radius: 5px 5px 0 0;
+                transition: 0.4s ease-in;
+               
+                &::after{
+                    content: " ";
+                    display: block;
+                    position: absolute;
+                    top: 15px;
+                    right: -5px;
+                    transform: rotate(45deg);
+                    width: 20px;
+                    height: 20px;
+                    background-color: inherit;
+                }
+            }
+            p{
+                @include p;
+                padding: 15px;
+                font-size: 18px;
+                border: rgb(255, 255, 255) 2px solid;
+                box-shadow: 10px 10px 10px rgb(114, 100, 100),-10px 0px 10px  rgb(114, 100, 100);
+                border-radius: 0 0 6px 6px;
+    
+            }
+        }
+        &:nth-child(odd){
+            .container-work-experience{
+                float: right;
+
+                h2{
+                    
+                    &::after{
+                        left: -5px;
+                    }
+                }
+            }       
+        }
+        
+        @for $i from 1 through 5{
+            &:nth-child(#{$i}){
+                .container-work-experience{
+                    h2{
+                        background-color: nth($color-list, $i);
+                    }
+                }
+            }
+        }
+    }    
+}
+@media(max-width:560px){
+    #work-experience{
+        &::before{
+            display: none;
+        }
+        article{
+            height: 350px;
+            .container-work-experience{
+                float: left;
+                margin-bottom: 20px;
+                width: 100%;
+                height: 280px;
+                div{
+                    position: absolute;
+                    top: 0;
+                    left: 60px;
+                }
+                .date{
+                    position: absolute;
+                    left: 30px;
+                    width: 60px;
+                    height: 60px;
+                    padding: 10px;
+                    
+                    .month{
+                        font-size: 15px;
+                    }
+                    .day,.year{
+                        font-size: 10px;
+                    }
+                    &:hover{
+                        width: 60px;
+                        height: 60px;
+                        background-color: $darkBlack;
+                        
+                    }
+                }
+                h2{
+                    &::after{
+                        left: -5px;
+                    }
+                }
+            }
+            &:nth-child(odd){
+                .container-work-experience{
+                    float: left;
+                }
+
+            } 
+        }
+    }
+}

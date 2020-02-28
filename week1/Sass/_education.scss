@@ -1,0 +1,108 @@
+ 
+@import "./variables";
+@import "./mixin";
+@import "./work";
+
+#education{
+    @extend #work-experience;
+    width: 60%;
+    @media(max-width:440px){
+        width: 80%;
+    }
+    h1{
+        @include h1;
+    }
+    &::before{
+        background-color: black;
+        height: 90%;
+        top: 91px;
+        left: 15px;
+    }
+    article{
+
+    height: auto;
+    .container-education{
+        width: 100%;
+        margin: 20px 40px;
+        
+        padding: 10px 20px 30px 10px;
+        .education-item-icon{
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 7xpx;
+            left: 7px;
+            background-color: black;
+            transform: rotate(45deg);
+            transition: 0.2s ease-in;
+            outline: 10px solid white;
+        }
+        .education-date{
+            position: relative;
+            margin: 0 0 10px 0px;
+            width: 250px;
+            transition: 0.4s ease-in;
+            padding: 5px 5px 0 0px;
+            background-color: black;
+            color: white;
+           p{
+               @include p;
+               font-size: 15px;
+               font-style: italic;
+               font-weight: 400;
+                padding: 2px 3px 5px 4px;
+           }
+        }
+        
+        
+        .education-description{
+            width: 80%;
+            h2{
+                margin: 0 10px 10px 20px;
+            }
+            .subheadline{
+                margin: -10px 0px 10px 20px;
+            }
+            p{
+                @include p;
+                text-align: left;
+                margin: 0 10px 10px 20px;
+            }
+            @media(max-width:540px){
+                h2{
+                    font-size: 25px;
+                }
+                p{
+                    font-size: 18px;
+                    
+                }
+                
+            }
+        }
+    }
+}
+}
+
+@for $i from 1 through 5 {
+    #education{
+        article{
+            
+        
+        &:nth-child(#{$i}){
+            &:hover{
+            
+            
+                .education-item-icon{
+                    background-color: nth($color-list, $i);
+                    transform: rotate(-45deg);
+                }
+                .education-date{
+                    background-color: nth($color-list, $i);
+                }
+            }
+            }
+        }
+        
+    }
+    
+}

@@ -1,0 +1,97 @@
+//importing 
+@import "./variables";
+@import  "./header";
+@import "./mixin";
+
+.upper-intro{
+    background-color: $primaryBlack;
+    width: 100%;
+    height: 3*50px;
+    text-align: center;
+    color: $primaryWhite;
+    h1{
+        padding-top:30px; 
+    }
+}
+#about{
+    margin: 30px 10%;
+    background-color: $White;
+    box-shadow: 10px 10px 10px 5px $primaryBlack;
+    border-radius: 10px;
+    padding: 100px 20px 20px 20px;
+    text-align: center;
+    position: relative;
+    height: auto;
+    button{
+        @include Button(150px, 50px);
+        transition: 0.5s ease-in-out;
+        box-shadow: 2px 2px 3px $color-0;
+        &:hover{
+            background-color: $color-0;
+            font-size: 20px;
+        }
+    }
+    img{
+        @include roundPhoto(150px, 150px);
+        display: block;
+        position: absolute;
+        top: -70px;
+        left: 50%;
+        margin: 0 0 0 -75px;
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+        &:hover{
+            width: 160px;
+            height: 160px;
+        }
+    }   
+    p{
+       @include p;
+       padding: 20px 30px 30px 30px ;
+    }
+    ul{
+        @include flex(row, 100%, 100% , transparent);
+        justify-content: center;
+        list-style: none;
+        padding: 0px;
+        li{
+            margin: 10px;
+            font-size: 30px;
+            .fa-facebook{
+                color: $facebook-color;
+            }
+            .fa-facebook:hover{
+                color: $facebook-color-hover;
+                font-size: 40px;
+            }
+            .fa-twitter{
+                color: $twitter-color-hover;
+            }
+            .fa-twitter:hover{
+                color: $twitter-color-hover;
+                font-size: 40px;
+            }
+            .fa-instagram{
+                color: $instagram-color;
+            }
+            .fa-instagram:hover{
+                font-size: 40px;
+            }
+            .fa-youtube{
+                color: $youtube-color;
+            }
+            .fa-youtube:hover{
+                font-size: 40px;
+                color: $youtube-color-hover;
+            }
+        }
+    }
+}
+@media(max-width:550px){
+    #about{
+        p{
+            padding: 10px;
+            font-size: 19px;
+        }
+    }
+}

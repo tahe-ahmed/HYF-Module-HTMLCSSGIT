@@ -1,0 +1,100 @@
+@import "./variables";
+@import "./mixin";
+
+.progress{
+    width: 18vw;
+    position: relative;
+    padding: 0px;
+    background-color: $White;
+    border-radius: 30px;
+}
+.percent{
+    position: absolute;
+    right: 0;
+    top:-25px;
+    font-size: 18px;
+}
+.bar{
+    height: 5px;
+    background-color: $color-0;
+
+    width: 30%;
+    &.python{
+        width: 90%;
+    }
+    &.javascript{
+        width: 75%;
+    }
+    &.sql{
+        width: 30%;
+    }
+    &.html{
+        width: 80%;
+    }
+}
+#skills{
+    margin: 50px 20px 30px 20px ;
+    width: 80%;
+    margin: auto;
+    h1{
+        @include h1;
+    }
+    .container-skills{
+        @include flex(row, auto, auto, nth($color-list,3));
+        padding: 70px 40px;
+        margin: auto 20px auto auto;
+        border-radius: 8px;
+        .skill-box{
+            margin: 5px 10px 5px 5px;
+            h2{
+                text-align: center;
+                margin: 15px 5px 0px 5px ;
+                text-transform: uppercase;
+                
+            }
+            ul{
+                padding-bottom: 15px;
+                li{
+                    @include p;
+                    font-size: 18px;
+                    text-align: left;
+                    margin: 10px 10px 10px 0px;
+                    list-style: none;
+                }
+            }
+        }
+    }
+}
+@media(max-width:750px){
+    .progress{
+        width: 230px;
+    }
+    #skills{
+        margin-right: 20px;
+        .container-skills{
+            padding: 50px 10px;
+        }
+    }
+}
+@media(max-width:400px){
+    .progress{
+        width: 150px;
+    }
+    #skills{
+        .container-skills{
+            padding: 50px 10px;
+        }
+        .skill-box{
+            h2{
+                padding: 10px 0 0 30px;
+                
+            }
+            ul{
+                li{
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

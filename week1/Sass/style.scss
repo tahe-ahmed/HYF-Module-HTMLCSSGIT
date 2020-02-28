@@ -1,0 +1,19 @@
+//importing 
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700,700i&display=swap');
+@import "./variables";
+@import  "./header";
+@import "./mixin";
+@import "./about";
+@import "./work";
+@import "./skills";
+@import "./_education";
+@import "./clients";
+
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(255, 255, 255);
+}

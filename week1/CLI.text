@@ -1,0 +1,3 @@
+touch .hidenFile.extension; mkdir .hidenFolder; ls -a
+mkdir -p these/folders/are/just/for/fun
+echo -n
