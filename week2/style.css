@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap');
+body{
+    box-sizing: border-box;
+}
+header h1, section h2{
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase;
+    margin: 5px;
+    font-size: 30px;
+}
+.grid-item{
+    list-style: none;
+    border-radius: 40px;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 0.4s;
+    height: auto;
+}
+.grid-item > h3{
+    text-align: center;
+    border-radius: 0px 0px 20px 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+  
+}
+.grid-item > p{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+.grid-item > img{
+    height: 200px;
+    width: 100%;
+  border-radius: 40px;
+}
+
+
+
+/* grid floating section */
+#grid-floats{
+    float: left;
+    margin: 20px;
+}
+
+.grid-item:hover{
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+/* adjast the float as left and the width for the grid item in the floating section 
+starting from Mobile size which is less than 600px width  */
+
+
+#grid-floats .grid-item:nth-child(n+1){
+    padding: 10px;
+    float: left;
+    width: 350px;
+}
+
+/* set the first grid item to full width  */
+#grid-floats .grid-item:first-child {
+    width: 100%;
+    float: left;
+}
+
+/* more than 1024px width size */
+@media only screen and (min-width:1024px){  
+    #grid-floats .grid-item:nth-child(n+2){
+        width: 22%;
+        height: 520px;
+    }
+    #grid-floats .grid-item:nth-child(-n+2){
+        width: calc(45% + 1em);
+        height: 400px;
+    }
+}
+/* between 600px and 1024px  */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    #grid-floats .grid-item:nth-child(n+2){
+        width: 28%;
+        height: 550px;
+    }
+    #grid-floats .grid-item:nth-child(-n+2){
+        width: calc(50% - 2em); 
+        height: 400px;
+    }
+    .grid-item > p{
+        font-size: 17px;
+    }
+    .grid-item > img{
+        height: 150px;
+    }
+    .grid-item > h3{
+        font-size: 18px;
+    }
+    .grid-item{
+        margin: auto;
+    }
+}
+
+
+
+/*flexbox grids section  */
+#grid-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 15px;
+}
+#grid-flex .grid-item{
+    width: 350px;
+}
+/* starting from the mobile size less than 600px  */
+#grid-flex .grid-item:nth-child(n+1){
+    margin: 5px;
+    padding: 10px;
+    height: auto;
+}
+#grid-flex .grid-item:first-child {
+    flex-grow: 1;
+    height: auto;
+    margin: 2px;
+}
+
+/* more than 1024px width size in the flexbox grid section */
+@media only screen and (min-width:1024px){  
+    #grid-flex .grid-item:nth-child(n+2){
+        flex: calc(23% - 1em);
+        height: 540px;
+    }
+    #grid-flex .grid-item:nth-child(-n+2){
+        flex: calc(50% - 2em);
+        height: 400px;
+    }
+}
+/* between 600px and 1024px in the flexbox grid section */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    #grid-flex .grid-item:nth-child(n+3){
+        flex: calc(25% - 1em);
+        height: 550px;
+        }
+    #grid-flex .grid-item:nth-child(-n+2){
+        flex: calc(50% - 2em);
+        height: 400px;
+    }
+    .grid-item > p{
+        font-size: 17px;
+    }
+    .grid-item > img{
+        height: 150px;
+    }
+    .grid-item h3{
+        font-size: 17px;
+    }
+}
